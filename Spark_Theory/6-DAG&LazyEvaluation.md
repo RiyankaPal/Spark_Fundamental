@@ -46,6 +46,8 @@ us_india_data=us_flight_data.filter((col("ORIGIN_COUNTRY_NAME")=='India')| (col(
 total_flight_ind_sing=us_india_data.groupby("DEST_COUNTRY_NAME").sum("count")
 ```
 In this example, no jobs will be triggered because no actions are invoked.
+![](./Images/5-DAG.PNG)<br>
+
 ---
 
 Now, let's look at a slightly modified example that triggers actions:
@@ -56,3 +58,4 @@ total_flight_ind_sing=us_india_data.groupby("DEST_COUNTRY_NAME").sum("count")
 total_flight_ind_sing.show()
 ```
 In this case, a job will be triggered because the .show() action is invoked, which forces the computation to run.
+![](./Images/4-DAG.PNG)<br>
