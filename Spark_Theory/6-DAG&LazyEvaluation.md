@@ -33,6 +33,26 @@ Thus, both `.read()` and `inferSchema` result in two separate jobs being trigger
 ### Visual Explanation
 
 In the Databricks UI or Spark UI, we can visually see that **2 jobs are created** as a result of the read and schema inference actions.<br>
-![](./Images/1-sparkecosystem.PNG)<br>
+![](./Images/3-DAG.PNG)<br>
 
+---
 
+## Lazy Evaluation Example
+In the example below, we can observe Spark's lazy evaluation behavior:
+
+```python
+us_flight_data=FLIGHT_Data.filter("DEST_COUNTRY_NAME=='United States'")
+us_india_data=us_flight_data.filter((col("ORIGIN_COUNTRY_NAME")=='India')| (col("ORIGIN_COUNTRY_NAME")=='Singapore'))
+total_flight_ind_sing=us_india_data.groupby("DEST_COUNTRY_NAME").sum("count")
+```
+In this example, no jobs will be triggered because no actions are invoked.
+---
+
+Now, let's look at a slightly modified example that triggers actions:
+```python
+us_flight_data=FLIGHT_Data.filter("DEST_COUNTRY_NAME=='United States'")
+us_india_data=us_flight_data.filter((col("ORIGIN_COUNTRY_NAME")=='India')| (col("ORIGIN_COUNTRY_NAME")=='Singapore'))
+total_flight_ind_sing=us_india_data.groupby("DEST_COUNTRY_NAME").sum("count")
+total_flight_ind_sing.show()
+```
+In this case, a job will be triggered because the .show() action is invoked, which forces the computation to run.
