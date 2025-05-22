@@ -132,7 +132,7 @@ Suppose you have 200 tasks and you create 5 buckets — Spark will create 5 buck
 **Reduces shuffle cost in joins:** 
 Suppose we have two large tables, both bucketed on the same column with 500 buckets. When joining them on that column, no shuffle occurs, which boosts performance.
 
-** Bucket Pruning: **
+**Bucket Pruning:**
 Let’s say we have 1 million records and we want to find a record by id = 123456789012. If we have 10,000 buckets, the system computes:
 ```python
 123456789012 % 10000 = 9012
