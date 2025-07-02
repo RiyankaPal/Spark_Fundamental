@@ -13,12 +13,12 @@ We will discuss these four phases in detail below.
 
 ## Four Phases of Catalyst Optimizer are:
 **1.  Analysis:**
-This phase resolves references, such as table names and column names, and ensures the logical plan is valid and complete. As explained by Databricks. <br>
+This phase resolves references, such as table names and column names, and ensures the logical plan is valid and complete. <br>
 - In Analysis Phase we have catalog which contains the metadata of data.<br>
 - So, in Analysis Phase it will check that file or a particular column is present or not if not then wit will throw **Analysis Error Exception**.<br>
 
 **2. Logical Optimization:**
-This phase applies rule-based optimizations to the logical plan, transforming it to a more efficient form. Examples include predicate pushdown, projection pruning, and constant folding, according to Databricks. <br>
+This phase applies rule-based optimizations to the logical plan, transforming it to a more efficient form. Examples include predicate pushdown, projection pruning, and constant folding. <br>
 
 **3. Physical Planning:**
 The optimized logical plan is converted into a physical plan, which specifies how the query will be executed on Spark. This involves selecting the best execution strategy, such as broadcast joins or shuffle joins. <br>
