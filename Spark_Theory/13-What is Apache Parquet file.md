@@ -114,11 +114,11 @@ Row Group 3 (Rows 200,000-299,999)
 Now if you want the 200,000th row, you only scan Row Group 3, not the whole file.
 And within Row Group 3, Parquet only reads the needed column chunks, if you're querying selected columns.
 
-NOTE:
+*NOTE:*
 - Parquet is Structred file format
 - Parquet is binary file format
 
-Structure of parquet file-format:
+*Structure of parquet file-format:*
 
 ![](./Images/9-spark_file.PNG)<br>
 

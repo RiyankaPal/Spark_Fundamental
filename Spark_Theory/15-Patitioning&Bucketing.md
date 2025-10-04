@@ -13,6 +13,9 @@ This makes it efficient when querying for specific address values (like only dat
 
 Suppose in the data below we want to partition by the name "Manish". Since "Manish" occurs only once, it will create a very small partition. This is not ideal.
 
+![](./Images/10-partition.PNG)<br>
+
+
 # Example 1: Partitioning by Address
 ```python
 DF=spark.read.format("csv")\
