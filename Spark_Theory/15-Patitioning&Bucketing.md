@@ -141,3 +141,9 @@ Let’s say we have 1 million records and we want to find a record by id = 12345
 123456789012 % 10000 = 9012
 ```
 So, Spark can directly read bucket 9012, reducing I/O drastically.
+
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.
+

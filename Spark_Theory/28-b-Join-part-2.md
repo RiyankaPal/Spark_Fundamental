@@ -116,11 +116,11 @@ Shuffle happens in operations like:
 - How it works: Both datasets are shuffled, sorted by the join key, and then merged on the executors. 
 - When to use: The default for large datasets when a broadcast isn't possible. It's robust and scalable, handling large tables and various join types (including outer joins). 
 
-**5. Broadcast Nested Loop Join (BNLJ) :**
+**4. Broadcast Nested Loop Join (BNLJ) :**
 - How it works: A variation of the broadcast join that is used for non-equi-join conditions. It broadcasts one relation and then performs a nested loop join with the other relation, which is a more expensive process. 
 - When to use: Used when there is no equi-condition to join on, and other strategies are not possible. 
 
-**6. Cartesian Product Join (CPJ) :**
+**5. Cartesian Product Join (CPJ) :**
 - How it works: Combines every row from the first DataFrame with every row from the second DataFrame. 
 - When to use: Reserved for when you intend to join every possible pair of rows. It can also be used as a fallback when an equi-condition is missing, though it is generally slow. 
 

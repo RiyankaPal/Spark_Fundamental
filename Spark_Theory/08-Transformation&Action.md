@@ -8,7 +8,7 @@
 ## WHAT IS TRANSFORMATION
 
 **Functions that return another dataset/RDD from existing dataset/RDD after performing some transformation.**
-Ex: Suppose we have a dataset of student now we want t0 select the student whose age is <18: this filter out process is transformation.
+Ex: Suppose we have a dataset of student now we want to select the student whose age is <18: this filter out process is transformation.
 
 ---
 
@@ -42,4 +42,9 @@ A narrow transformation is a type of transformation where each input partition c
 
 A wide transformation is a type of transformation where each input partition can contribute to multiple output partitions. It involves shuffling and data movement across partitions, often resulting in a stage boundary in Spark. Wide transformations require coordination and data exchange across nodes.  
 **Examples:** `groupByKey()`, `join()`, `repartition()`,distinct etc.
+
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.
 

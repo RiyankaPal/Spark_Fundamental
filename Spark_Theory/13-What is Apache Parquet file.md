@@ -122,5 +122,12 @@ And within Row Group 3, Parquet only reads the needed column chunks, if you're q
 
 ![](./Images/9-spark_file.PNG)<br>
 
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.
+
+
+
 
 

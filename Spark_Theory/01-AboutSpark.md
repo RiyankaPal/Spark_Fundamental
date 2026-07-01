@@ -128,6 +128,9 @@ Previously, we worked with Hadoop, but in the next section, we’ll explore the 
 This is where Apache Spark comes in. Spark is a distributed processing framework that efficiently handles Big Data across a cluster of machines.
 
 ---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.
 
 
 

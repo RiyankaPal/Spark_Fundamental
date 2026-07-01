@@ -55,4 +55,9 @@ That said:
 Both Hadoop and Spark are powerful, but they serve different purposes.
 
 If you’re dealing with massive batch jobs and need strong security and mature tooling, Hadoop might be the right fit.  
-If speed, flexibility, and real-time processing are critical for your workloads, Spark is likely the better choice.
+If speed, flexibility, and real-time processing are critical for your workloads, Spark is likely the better choice.<br>
+
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.

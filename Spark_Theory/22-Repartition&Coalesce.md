@@ -3,15 +3,15 @@ In Apache Spark, repartition and coalesce are both used to control the number of
 
 # Key Differences:
 **Shuffle:**
-repartition always performs a full shuffle of the data, redistributing it across the new partitions, while coalesce tries to minimize shuffling by merging existing partitions. 
+repartition always performs a full shuffle of the data, redistributing it across the new partitions, while coalesce tries to minimize shuffling by merging existing partitions. <br>
 **Partition Count:**
-repartition can increase or decrease the number of partitions, while coalesce is primarily used to reduce the number of partitions. 
+repartition can increase or decrease the number of partitions, while coalesce is primarily used to reduce the number of partitions. <br>
 **Efficiency:**
-repartition can be computationally expensive due to the shuffle, while coalesce is generally faster and more efficient when reducing partitions, especially after filtering. 
+repartition can be computationally expensive due to the shuffle, while coalesce is generally faster and more efficient when reducing partitions, especially after filtering. <br>
 ## When to Use:
 **repartition:**
 When you need to control the number of partitions and potentially redistribute data across partitions, including increasing or decreasing them. 
-When you need to guarantee an even distribution of data across partitions, as it involves a full shuffle. 
+When you need to guarantee an even distribution of data across partitions, as it involves a full shuffle. <br>
 **coalesce:**
 When you want to reduce the number of partitions efficiently, minimizing data movement. 
 When you are reducing partitions after heavy filtering, as it avoids a full shuffle. 

@@ -15,7 +15,7 @@ We will discuss these four phases in detail below.
 **1.  Analysis:**
 This phase resolves references, such as table names and column names, and ensures the logical plan is valid and complete. <br>
 - In Analysis Phase we have catalog which contains the metadata of data.<br>
-- So, in Analysis Phase it will check that file or a particular column is present or not if not then wit will throw **Analysis Error Exception**.<br>
+- So, in Analysis Phase it will check that file or a particular column is present or not if not then it will throw **Analysis Error Exception**.<br>
 
 **2. Logical Optimization:**
 This phase applies rule-based optimizations to the logical plan, transforming it to a more efficient form. Examples include predicate pushdown, projection pruning, and constant folding. <br>
@@ -32,3 +32,8 @@ This phase compiles parts of the query to Java bytecode for optimized execution 
 
 **NOTE:**
 **Is SPARK SQL ENGINE A COMPILER? YES**
+
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.

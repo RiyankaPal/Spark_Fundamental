@@ -59,3 +59,8 @@ total_flight_ind_sing.show()
 ```
 In this case, a job will be triggered because the .show() action is invoked, which forces the computation to run.
 ![](./Images/4-DAG.PNG)<br>
+
+---
+## Happy Learning! 🚀
+
+If you found this guide helpful, consider giving the repository a ⭐ and following for more beginner-friendly PySpark content.
