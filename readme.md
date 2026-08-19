@@ -89,9 +89,7 @@ This repository covers Spark fundamentals step by step.
 
 - Apache Spark
 - PySpark
-- Python
 - Databricks
-- Jupyter Notebook
 
 ---
 
