@@ -57,12 +57,14 @@ broadcast(df)
 ```
  If broadcast data is too large → driver crash
 
-## How to Handle / Prevent OOM?
+## How to Handle / Prevent OOM?<br>
+
 1. Avoid collect()<br>
 instead use :<br>
 df.show()<br>
 df.take()<br>
-2.Increase driver memory
+
+2. Increase driver memory
 ```
 --driver-memory 4g
 ```
