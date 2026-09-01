@@ -1,24 +1,24 @@
 ## What is OOM in Spark?
-OOM (Out Of Memory) happens when Spark cannot allocate enough memory to execute a task.
-JVM throws: java.lang.OutOfMemoryError
-Can happen on:
-Driver
-Executor
+OOM (Out Of Memory) happens when Spark cannot allocate enough memory to execute a task.<br>
+JVM throws: java.lang.OutOfMemoryError<br>
+Can happen on:<br>
+Driver<br>
+Executor<br>
 
 ## Why do we get Driver OOM?
 The driver is responsible for:
 
-Collecting results
-Maintaining metadata (DAG, stages, tasks)
-Running SparkContext
+- Collecting results<br>
+- Maintaining metadata (DAG, stages, tasks)<br>
+- Running SparkContext<br>
 
-Driver OOM occurs when it tries to hold more data than its allocated memory.
+- Driver OOM occurs when it tries to hold more data   than its allocated memory.
 
 ## Common scenarios:
-Using collect() on large datasets
-Storing large broadcast variables
-Too many partitions/tasks metadata
-Large query plans
+- Using collect() on large datasets<br>
+- Storing large broadcast variables<br>
+- Too many partitions/tasks metadata<br>
+- Large query plans<br> 
 
 ## What is Driver Overhead Memory?
 
@@ -58,10 +58,10 @@ broadcast(df)
  If broadcast data is too large → driver crash
 
 ## How to Handle / Prevent OOM?
-1. Avoid collect()
-instead use 
-df.show()
-df.take()
+1. Avoid collect()<br>
+instead use :<br>
+df.show()<br>
+df.take()<br>
 2.Increase driver memory
 ```
 --driver-memory 4g
