@@ -6,13 +6,16 @@ Driver<br>
 Executor<br>
 
 ## Why do we get Driver OOM?
-The driver is responsible for:
+The Driver is the main process that coordinates the Spark application. It is responsible for:
 
-- Collecting results<br>
-- Maintaining metadata (DAG, stages, tasks)<br>
-- Running SparkContext<br>
+- Collecting results returned by executors.
+- Maintaining metadata about the application, such as the DAG, stages, tasks, and job information.
+- Running the SparkContext/SparkSession and coordinating the overall execution of the Spark job.
+- Planning and scheduling tasks and sending them to the executors.
 
-- Driver OOM occurs when it tries to hold more data   than its allocated memory.
+**What Causes Driver OOM?**
+
+Driver OOM (Out Of Memory) occurs when the Driver tries to hold more data in its memory than the memory allocated to it.
 
 ## Common scenarios:
 - Using collect() on large datasets<br>
