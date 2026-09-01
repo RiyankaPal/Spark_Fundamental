@@ -66,11 +66,12 @@ lines.
 
 ## 4. Line-Delimited JSON vs Multiline JSON
 
-  Line-Delimited JSON   Multiline JSON
-  --------------------- ---------------------------
-  One record per line   Entire JSON document
-  Better parallelism    More parsing overhead
-  Faster for big data   Slower for large datasets
+
+| Line-Delimited JSON | Multiline JSON |
+|---|---|
+| One record per line | Entire JSON document |
+| Better parallelism | More parsing overhead |
+| Faster for big data processing | Slower for large datasets |
 
 **Recommendation:** Prefer line-delimited JSON (JSONL/NDJSON) for
 distributed workloads.
@@ -82,14 +83,27 @@ unexpectedly. Always validate JSON before production ingestion.
 
 ## 6. Handling Corrupted JSON Files
 
-With:
+When reading JSON files, Spark can handle corrupted or malformed records using the `PERMISSIVE` mode.
 
-``` python
-.option("mode","PERMISSIVE")
+```python
+.option("mode", "PERMISSIVE")
 ```
 
-Spark: - Loads valid records. - Stores invalid records in
-`_corrupt_record`. - Prevents pipeline failures.
+With `PERMISSIVE` mode, Spark:
+
+- Loads valid records successfully.
+- Stores invalid or corrupted records in the `_corrupt_record` column.
+- Prevents the pipeline from failing because of corrupted records.
+
+### Example
+
+```python
+df = spark.read \
+    .option("mode", "PERMISSIVE") \
+    .json("input.json")
+```
+
+This allows the pipeline to continue processing valid records while keeping track of corrupted records separately.
 
 ## 7. Reading Nested JSON Files
 
